@@ -6,6 +6,6 @@ RUN mvn clean package
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=build target/*.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
