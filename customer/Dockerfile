@@ -4,7 +4,7 @@ COPY pom.xml .
 COPY src/ ./src
 RUN mvn clean package
 
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build target/*.jar app.jar
 EXPOSE 8080
